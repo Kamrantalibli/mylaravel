@@ -8,7 +8,7 @@ class HomeController extends Controller
 {
     public function index() {
 
-        $age = 28;
+        $age = 20;
 
         $person = new \stdClass();  //create person object
         $person->age = $age;
