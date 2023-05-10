@@ -46,3 +46,16 @@ Route::any('/everything', function () {
 Route::resource('article', 'ArticleController');
 
 Route::apiResource('/api/article', 'Api/ArticleController');
+
+Route::get('users/{id}', 'UserController@show')
+    ->name('user.show')
+    ->whereNumber('id');            // Only integer value accept
+
+Route::get('users/{name}', 'UserController@showName')
+    ->name('user.showName')
+    // ->whereAlpha('name');        // Only string value accept
+    ->whereAlphaNumeric('name');    // String,Integer values accept
+
+Route::get('user/{role}', 'UserController@roleCheck')
+->name('user.roleCheck')
+->whereIn('role', ['admin', 'user']);
