@@ -12,8 +12,9 @@ class HomeController extends Controller
 
 
     public function about() {
-        // return redirect(route("contact"));    // Yonlendirme methodu 1
-        return redirect()->route('contact');  // Yonlendirme methodu 2
+        return view('front.about');
+        // return redirect(route("contact"));       // Yonlendirme methodu 1
+        // return redirect()->route('contact');     // Yonlendirme methodu 2
         // return Redirect::route("contact");       // Yonlendirme methodu 3
     }
 

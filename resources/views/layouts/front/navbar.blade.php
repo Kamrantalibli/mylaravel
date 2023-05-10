@@ -16,6 +16,11 @@
             {{-- <a class="nav-link {{ Route::currentRouteName() == "about" ? "active" : "" }}" href="{{ route("about") }}">About</a> --}}
             <a class="nav-link {{ request()->route()->getName() == "about" ? "active" : "" }}" href="{{ route("about") }}">About</a>
           </li>
+          <li class="nav-item">
+            {{-- <a class="nav-link {{ Route::is("contact") ? "active" : "" }}" href="{{ route("contact") }}">Contact</a> --}}
+            {{-- <a class="nav-link {{ Route::currentRouteName() == "contact" ? "active" : "" }}" href="{{ route("contact") }}">Contact</a> --}}
+            <a class="nav-link {{ request()->route()->getName() == "contact" ? "active" : "" }}" href="{{ route("contact") }}">Contact</a>
+          </li>
         </ul>
         
       </div>
