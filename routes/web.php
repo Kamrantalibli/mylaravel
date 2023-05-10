@@ -1,5 +1,5 @@
 <?php
-
+ 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\HomeController;
 
@@ -21,4 +21,8 @@ Route::get('/about', "HomeController@about")->name('about');
 Route::get('/contact', 'ContactController@showForm')->name('contact');
 
 Route::post('/contact', 'ContactController@contact');
-Route::post('/user/{id}', 'ContactController@user')->name('user')->where("id", "[0-9]+");
+
+Route::post('/user/{id}/{name?}', 'ContactController@user')
+    ->name('user')
+    // ->where("id", "[0-9]+");
+    ->where(["id" => "[0-9]+", "name" => "[a-z]+"]);
