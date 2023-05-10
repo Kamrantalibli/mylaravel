@@ -50,8 +50,8 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id) {
-        dd("id value : $id");
+    public function edit(string $id = "0") {
+        return view("admin.articles.edit");
     }
 
     /**
@@ -72,6 +72,6 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-        //
+        dd("$id value is delete.");
     }
 }

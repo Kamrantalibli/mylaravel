@@ -45,7 +45,7 @@ Route::any('/everything', function () {
 
 Route::resource('article', 'ArticleController');
 
-Route::apiResource('/api/article', 'Api/ArticleController');
+// Route::apiResource('/api/article', 'Api/ArticleController');
 
 Route::get('users/{id}', 'UserController@show')
     ->name('user.show')
@@ -59,3 +59,14 @@ Route::get('users/{name}', 'UserController@showName')
 Route::get('user/{role}', 'UserController@roleCheck')
 ->name('user.roleCheck')
 ->whereIn('role', ['admin', 'user']);
+
+Route::prefix("admin")->group(function(){
+    Route::get('/edit-article', 'ArticleController@edit')->name('admin.articleEdit');
+
+    Route::get('/article/{id}/delete', 'ArticleController@destroy')->name('admin.articleDestroy');
+});
+
+Route::controller(UserController::class)->prefix('admin')->group(function(){
+    Route::get('/get-user', 'getUser');
+    Route::get('/delete-user', 'deleteUser');
+});
