@@ -38,3 +38,11 @@ Route::patch('/users/{id}/update', 'UserController@update')->name('user.update')
 Route::put('/users/{id}/all-update', 'UserController@updateAll')->name('user.updateAll');
 
 Route::delete('/users/{id}/delete', 'UserController@delete')->name('user.delete');
+
+Route::any('/everything', function () {
+    dd('Everything came');
+});
+
+Route::resource('article', 'ArticleController');
+
+Route::apiResource('/api/article', 'Api/ArticleController');
