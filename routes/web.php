@@ -28,3 +28,13 @@ Route::post('/user/{id}/{name?}', 'ContactController@user')
     ->where(["id" => "[0-9]+", "name" => "[a-z]+"]);
 
 Route::match(['get', 'post'], '/support-form', 'SupportFormController@support')->name('support-form.support');
+
+Route::patch('/users/{id}/update', 'UserController@update')->name('user.update');
+/* 
+    Patch => It is used if only one information of the user is to be updated. Example only email.
+
+    Put => we can update all the user's information.
+*/
+Route::put('/users/{id}/all-update', 'UserController@updateAll')->name('user.updateAll');
+
+Route::delete('/users/{id}/delete', 'UserController@delete')->name('user.delete');
