@@ -13,7 +13,7 @@
         type="{{ $type ?? 'text' }}" 
         name="{{ $name ?? '' }}" 
         id="{{ $id }}" 
-        class="{{ $type !='submit' ? 'form-control' : '' }} {{ $inputClasses }}" 
+        class="{{ $type !='submit' && $type !='checkbox' && $type !='button' ? 'form-control' : '' }} {{ $inputClasses ?? '' }}" 
         placeholder="{{ isset($placeholder) ? $placeholder : ( isset($label) ? $label : '' ) }}"
         value="{{ $defaultValue ?? '' }}"
         {{ isset($isDisabled) && $isDisabled ? "disabled" : "" }}>

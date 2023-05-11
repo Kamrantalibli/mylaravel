@@ -15,7 +15,7 @@
                 </div> --}}
 
                 <x-admin.elements.input 
-                    :labelClasses="'text-danger'" 
+                    :labelClasses="''" 
                     :id="'name'" 
                     :name="'name'" 
                     :inputClasses="''" 
@@ -25,7 +25,7 @@
                     :type="'text'"
                     :parentClass="'mt-3'">
 
-                    <x-slot:label>Atricle Name</x-slot:label>
+                    <x-slot name="label">Atricle Name</x-slot>
                 </x-admin.elements.input>
 
                 <div class="form-group mt-3">
@@ -42,10 +42,17 @@
                     <textarea name="articleContent" id="articleContent" class="form-control" cols="30" rows="10"></textarea>
                 </div>
 
-                <div class="form-group mt-3 d-flex align-items-center gap-3">
-                    <label for="status" class="form-label m-0">Article publish</label>
-                    <input type="checkbox" name="status" id="status" class="form-check">
-                </div>
+                <x-admin.elements.input
+                    :labelClasses="'form-label m-0'"
+                    :type="'checkbox'"
+                    :name="'status'"
+                    :id="'status'"
+                    :inputClasses="'form-check'"
+                    :defaultValue="'1'"
+                    :parentClass="'mt-3 d-flex align-items-center gap-3'">
+
+                    <x-slot name="label">Article publish</x-slot>
+                </x-admin.elements.input>
 
                 <x-admin.elements.input 
                     :id="'btnSave'" 
