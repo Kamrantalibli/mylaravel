@@ -5,39 +5,12 @@
 @endsection
  
 @section("content")
-    <form action="" method="POST">
-        @csrf
-        @method('DELETE')
-        @auresMethod("kamran")
-        <input type="text" name="fullname">
-        <button type="submit">Send</button>
-    </form>
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-        Content zone
-    <hr>
-
-    İncoming age value: {{ $age ?? @$person->age}}
-    <hr>
-    İncoming name value: {{ $name ?? @$person->aa}}  {{-- @ ->this simvol runs the code even if there is an error  --}}
-    <hr>
-    @if (isset($person) && isset($person->age))
-        @switch($person->age)
-            @case(10)
-                Child
-                @break
-            @case(20)
-                Youth
-                @break
-            @default
-                You are old
-        @endswitch
-    @else
-        Not incoming
-    @endif
-    <hr>
+    <x-article>
+        <x-slot name="title" >Article 1</x-slot>
+        <x-slot:title2>Article 2</x-slot:title2>
+        <hr>
+        <x-slot name="content" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui non nobis, officia, dolor culpa deserunt similique deleniti perferendis cum rem dicta tempora delectus inventore quis. Incidunt, quibusdam sint. Voluptatum, asperiores.</x-slot>
+    </x-article>
 @endsection
 
 @section("js")
