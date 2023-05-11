@@ -5,6 +5,16 @@
 @endsection
  
 @section("content")
+    <form action="" method="POST">
+        @csrf
+        @method('DELETE')
+        @auresMethod("kamran")
+        <input type="text" name="fullname">
+        <button type="submit">Send</button>
+    </form>
+    <hr>
+    <hr>
+    <hr>
     <hr>
         Content zone
     <hr>
