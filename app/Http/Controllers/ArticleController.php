@@ -21,7 +21,7 @@ class ArticleController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        dd('Create article form came');
+        return view('admin.articles.create');
     }
 
     /**
