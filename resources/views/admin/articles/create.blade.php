@@ -28,19 +28,34 @@
                     <x-slot name="label">Atricle Name</x-slot>
                 </x-admin.elements.input>
 
-                <div class="form-group mt-3">
-                    <label for="category" class="form-label">Article category</label>
-                    <select name="category" id="category" class="form-control">
-                        <option value="-1">Select Article</option>
-                        <option value="1">PHP</option>
-                        <option value="2">C#</option>
-                    </select>
-                </div>
+                <x-admin.elements.select
+                    :labelClasses="'form-label'" 
+                    :id="'category'" 
+                    :name="'category'" 
+                    :inputClasses="''"
+                    :isDisabled="false"
+                    :parentClass="'mt-3'"
+                    :options="['-1' => 'Select Article',
+                                '1' => 'PHP',
+                                '2' => 'C#']"
+                    {{-- :defaultValue="'2'" --}}>
+                    <x-slot name="label">Article Category</x-slot>
+                </x-admin.elements.select>
 
-                <div class="form-group mt-3">
-                    <label for="articleContent" class="form-label">Article content</label>
-                    <textarea name="articleContent" id="articleContent" class="form-control" cols="30" rows="10"></textarea>
-                </div>
+                <x-admin.elements.textarea
+                    :labelClasses="''" 
+                    :id="'articleContent'" 
+                    :name="'articleContent'" 
+                    :inputClasses="''" 
+                    :placeholder="'Article content'"
+                    :isDisabled="false"
+                    :defaultValue="''"
+                    :parentClass="'mt-3'"
+                    :rows="'5'"
+                    :style="'resize:none'">
+
+                    <x-slot name="label">Article Content</x-slot>
+                </x-admin.elements.textarea>
 
                 <x-admin.elements.input
                     :labelClasses="'form-label m-0'"
